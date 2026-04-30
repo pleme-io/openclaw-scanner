@@ -8,5 +8,6 @@ pub mod assessors;
 pub mod config;
 pub mod daemon;
 pub mod error;
+pub mod reattestation;
 pub mod reporters;
 pub mod watchers;
