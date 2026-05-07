@@ -23,10 +23,8 @@
       url = "github:nix-community/crate2nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    devenv = {
-      url = "github:cachix/devenv";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # Follow substrate's devenv pin — fleet source of truth (Pillar 12).
+    devenv.follows = "substrate/devenv";
   };
 
   outputs = { self, nixpkgs, substrate, forge, crate2nix, devenv, ... }:
