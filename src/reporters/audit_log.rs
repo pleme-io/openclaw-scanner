@@ -1,11 +1,14 @@
+use async_graphql::SimpleObject;
 use chrono::Utc;
+use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Serialize, Deserialize, JsonSchema, SimpleObject)]
 pub struct AuditEntry {
     pub timestamp: String,
     pub event_type: String,
     pub agent_name: String,
+    #[graphql(skip)]
     pub details: serde_json::Value,
 }
 

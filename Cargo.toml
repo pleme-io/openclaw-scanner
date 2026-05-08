@@ -33,6 +33,7 @@ tower-http = { version = "0.6", features = ["cors", "trace"] }
 async-graphql = { version = "7.0", features = ["chrono", "tracing"] }
 async-graphql-axum = "7.0"
 reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+schemars = { version = "0.8", features = ["chrono"] }
 notify = "7"
 
 [lints.clippy]
@@ -41,6 +42,7 @@ pedantic = "warn"
 [dev-dependencies]
 tokio-test = "0.4"
 tempfile = "3.14"
+tower = { version = "0.5", features = ["util"] }
 
 [profile.release]
 opt-level = "z"

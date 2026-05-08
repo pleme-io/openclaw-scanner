@@ -1,8 +1,9 @@
 use async_graphql::SimpleObject;
+use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
 
 /// Result of a compliance assessment.
-#[derive(Clone, Debug, Serialize, Deserialize, SimpleObject)]
+#[derive(Clone, Debug, Serialize, Deserialize, JsonSchema, SimpleObject)]
 pub struct ComplianceAssessment {
     pub framework: String,
     pub passed: bool,
@@ -17,7 +18,7 @@ pub fn assess_compliance(frameworks: &[String]) -> Vec<ComplianceAssessment> {
         .iter()
         .map(|f| ComplianceAssessment {
             framework: f.clone(),
-            passed: true, // placeholder
+            passed: true, // default until framework-specific logic is added
             controls_checked: 0,
             controls_passed: 0,
             details: vec![],
