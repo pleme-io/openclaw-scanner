@@ -34,7 +34,7 @@ async-graphql = { version = "7.0", features = ["chrono", "tracing"] }
 async-graphql-axum = "7.0"
 reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
 schemars = { version = "0.8", features = ["chrono"] }
-notify = "7"
+notify = { version = "7", default-features = false, features = ["macos_kqueue"] }
 
 [lints.clippy]
 pedantic = "warn"
